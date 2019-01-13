@@ -1,0 +1,25 @@
+df0 <- read.table("dataW0_9.txt")
+df1 <- read.table("dataW0_92.txt")
+df2 <- read.table("dataW0_94.txt")
+df3 <- read.table("dataW0_96.txt")
+df4 <- read.table("dataW0_98.txt")
+df5 <- read.table("dataW1.txt")
+df6 <- read.table("dataW1_02.txt")
+df7 <- read.table("dataW1_04.txt")
+df8 <- read.table("dataW1_06.txt")
+df9 <- read.table("dataW1_08.txt")
+df10 <- read.table("dataW1_1.txt")
+a = c(max(df0$V2),max(df1$V2),max(df2$V2),max(df3$V2),max(df4$V2),max(df5$V2),max(df6$V2),max(df7$V2),max(df8$V2),max(df9$V2),max(df10$V2))
+b=c(0.9,0.92,0.94,0.96,0.98,1,1.02,1.04,1.06,1.08,1.1)*3/2*pi*pi
+a= sapply(a, function(x) x-4.93)
+plot(b,a, xlab = "w",ylab="E")
+ramka <-data.frame(w = b,E=a)
+write.table(ramka,file ="fitData.csv",sep=",")
+#library("MASS")
+#data <-fitdistr(a,"cauchy")
+#x <- seq(0.9, 1.1, 0.01)
+
+#function = 
+
+#plot(x, dcauchy(x, location = 1, scale =0.02)+4.93, type="l")
+#points(b, a, pch = 19, col = "blue")
